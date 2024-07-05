@@ -1,4 +1,4 @@
-# Blue and Green Admin API
+
 # Environment vars and Configurations
 This project need ``.env`` file and ``.config.json`` file. Please request it from repo owner before run the project.
 
