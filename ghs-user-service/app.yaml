@@ -1,0 +1,9 @@
+runtime: nodejs20
+
+service: ghs-user-service
+
+env_variables:
+  SERVICE_NAME: "ghs-user-service"
+  DEFAULT_SECRET_NAME: "ghs-secret"
+  IAP_CLIENT_ID: ""
+  ENV: "dev"

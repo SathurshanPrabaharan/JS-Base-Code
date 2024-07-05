@@ -1,0 +1,9 @@
+runtime: nodejs20
+
+service: ghs-admin-portal-api
+
+env_variables:
+  SERVICE_NAME: "ghs-admin-portal-api"
+  DEFAULT_SECRET_NAME: "ghs-secret"
+  IAP_CLIENT_ID: ""
+  ENV: "dev"

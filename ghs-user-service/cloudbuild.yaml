@@ -1,0 +1,23 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args:
+      - 'install'
+      - 'js-yaml@3.14.1'
+
+  - name: node
+    entrypoint: npm
+    env:
+      - 'ENV=${_ENV}'
+      - 'IAP_CLIENT_ID=${_IAP_CLIENT_ID}'
+      - 'DEFAULT_SECRET_NAME=${_DEFAULT_SECRET_NAME}'
+      - 'SERVICE_NAME=${_SERVICE_NAME}'
+    args:
+      - 'run'
+      - 'custom-build'
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'app'
+      - 'deploy'
+      - 'app.yaml'
