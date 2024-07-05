@@ -13,16 +13,16 @@ async function verifyToken (req,res,next) {
     }
 
     try {
-        // const credentials = await getCredentials();
-        // const firebaseAuth = await getFirebaseAuth(credentials);
-        // req.userGroups = [];
-        // const token = authorization.substring(7,authorization.length);
-        // const claims = await firebaseAuth.verifyIdToken(token);
-        // req.user  = {
-        //     id: claims.user ? claims.id : '',
-        //     userGroups: claims.userGroups ? claims.userGroups : [],
-        //     email: claims.email ? claims.email : ''
-        // }
+        const credentials = await getCredentials();
+        const firebaseAuth = await getFirebaseAuth(credentials);
+        req.userGroups = [];
+        const token = authorization.substring(7,authorization.length);
+        const claims = await firebaseAuth.verifyIdToken(token);
+        req.user  = {
+            id: claims.user ? claims.id : '',
+            userGroups: claims.userGroups ? claims.userGroups : [],
+            email: claims.email ? claims.email : ''
+        }
         next();
 
     }catch (err) {
